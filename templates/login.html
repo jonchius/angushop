@@ -2,18 +2,18 @@
   <h1 class="heading admin-login text-center">Shop Administrator Login</h1>
 
   <div class="row">
-    <div class="offset-by-three six columns">
+    <div class="col-sm-6 col-sm-offset-3">
       <form ng-submit="Ctrl.authenticate(user,password)">
         <div class="form-group">
           <label for="username">Email</label>
-          <input type="text" placeholder="Email" ng-model="user">
+          <input type="text" class="form-control" placeholder="Email" ng-model="user">
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" placeholder="Password" ng-model="password">
+          <input type="password" class="form-control" placeholder="Password" ng-model="password">
         </div>
         <div>
-          <button>Login</button>
+          <button class="btn btn-default">Login</button>
         </div>
       </form>
     </div>

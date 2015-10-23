@@ -6,34 +6,46 @@
 }
 
 
-/* Skeleton Overrides
+/* Bootstrap Overrides
 * * * * * * * * * * * * */
 
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="text"],
-input[type="tel"],
-input[type="url"],
-input[type="password"] {
-	width: 100%;
+/* Buttons */
+.btn.btn-default {
+	border-radius: 0;
+	height: 38px;
+	padding: 8px 18px;
+}
+
+/* Forms */
+.form-group {
+	margin: 25px auto 30px auto;
+}
+
+.form-control {
+	border-radius: 0;
+	height: 48px;
 }
 
 
-/* Custom Styles
-* * * * * * * * * * * * */
+
+
+
+
+/* Headings */
 
 .heading {
 	color: #686868;
 }
 
 .heading.admin-login {
-	margin: 40px auto 80px auto;
+	margin: 60px auto;
 	font-size: 28px;
 	font-weight: 300;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 }
+
+
 
 
 
