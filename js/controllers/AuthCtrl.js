@@ -4,7 +4,9 @@ function AuthCtrl(api,$location){
 	this.api = api;
 	this.$location = $location;
 }
+
 AuthCtrl.prototype.authenticate = function(username,password){
+	
 	var self = this;
 	
 	var request_body = {

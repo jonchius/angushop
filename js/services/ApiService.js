@@ -1,15 +1,12 @@
+app.service('api', ApiService);
 
 function ApiService($http) {
   this.http = $http;
 }
 
-angular.module('ShopApp').service('api', ApiService);
-
-
 //constants
 var BASE_URL = 'http://174.129.248.23/brainstation/shop';
 var HEADERS = {headers : {'Content-Type': 'application/x-www-form-urlencoded'}};
-
 
 ApiService.prototype.request = function(endpoint,data,method) {
 
@@ -25,14 +22,16 @@ ApiService.prototype.request = function(endpoint,data,method) {
 
 };
 
-
-//helper function for serializing data for the api
+// helper function for serializing data for the api
 ApiService.prototype.serializeData = function(data) { 
+    
     // If this is not an object, defer to native stringification.
     if ( ! angular.isObject( data ) ) { 
         return( ( data == null ) ? "" : data.toString() ); 
     }
+    
     var buffer = [];
+    
     // Serialize each key in the object.
     for ( var name in data ) { 
         if ( ! data.hasOwnProperty( name ) ) { 
@@ -43,6 +42,7 @@ ApiService.prototype.serializeData = function(data) {
             encodeURIComponent( name ) + "=" + encodeURIComponent( ( value == null ) ? "" : value )
         ); 
     }
+    
     // Serialize the buffer and clean it up for transportation.
     var source = buffer.join( "&" ).replace( /%20/g, "+" ); 
     return(source); 

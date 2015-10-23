@@ -1,10 +1,11 @@
 app.service('productService',ProductService);
 
 function ProductService(api){
+	
 	//services
 	this.api = api;
-
 	this.products = localStorage.getItem('products');
+	
 }
 
 
