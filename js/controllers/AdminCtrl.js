@@ -1,6 +1,7 @@
 app.controller('AdminCtrl',AdminCtrl);
 
 function AdminCtrl(productService,$location,products){
+	
 	var self = this;
 
 	//services
