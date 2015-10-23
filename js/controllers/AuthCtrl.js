@@ -10,7 +10,7 @@ function AuthCtrl(api,$location){
 AuthCtrl.prototype.authenticate = function(username,password){
 	
 	var self = this;
-	
+
 	var request_body = {
 		username: username,
 		password: password
@@ -19,8 +19,7 @@ AuthCtrl.prototype.authenticate = function(username,password){
 	this.api.request('/login',request_body,'POST')
 	.then(function(response) {
     	console.log(response);
-    	if (response.data.authToken != 'Invalid Credentials') {
-	      	//reset local storage data
+    	if (response.data.authToken != 'Invalid Credentials' && response.data.authToken != null) {
 	      	localStorage.removeItem('products');
 	      	localStorage.setItem('authToken',response.data.authToken);
 	      	self.$location.path('/admin');

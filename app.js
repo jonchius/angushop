@@ -14,14 +14,14 @@ app.config(function($routeProvider,$httpProvider){
 		controller:'AdminCtrl as Ctrl',
 		resolve:{
 			path:function($location){
-					if(localStorage.getItem('authToken') == null){
-						$location.path('/login');
-					}
-				},
-			products:function(productService){
-					return productService.getProducts();
+				if(localStorage.getItem('authToken') == null){
+					$location.path('/login');
 				}
+			},
+			products:function(productService){
+				return productService.getProducts();
 			}
+		}
 	})
 	.when('/add_product',{
 		templateUrl:'templates/add_product.html',
