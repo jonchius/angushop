@@ -1,0 +1,12 @@
+<h1>
+	Admin Page
+</h1>
+<ul>
+	<li><a href="/#/add_product">Add Product</a></li>
+	<li><a href="/#/view_orders">View Orders</a></li>
+</ul>
+
+<div ng-repeat="product in Ctrl.products">
+	<strong>{{product.name}}</strong>
+	<p>{{product.description}}</p>
+</div>
