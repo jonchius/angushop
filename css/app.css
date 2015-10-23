@@ -1,0 +1,40 @@
+/* Helper Classes
+ * * * * * * * * * * * * */
+
+.text-center {
+	text-align: center;
+}
+
+
+/* Skeleton Overrides
+* * * * * * * * * * * * */
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"] {
+	width: 100%;
+}
+
+
+/* Custom Styles
+* * * * * * * * * * * * */
+
+.heading {
+	color: #686868;
+}
+
+.heading.admin-login {
+	margin: 40px auto 80px auto;
+	font-size: 28px;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+
+
+
