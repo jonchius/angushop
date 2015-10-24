@@ -5,6 +5,14 @@
 	text-align: center;
 }
 
+.no-right-padding {
+	padding-right: 0;
+}
+
+.no-left-padding {
+	padding-left: 0;
+}
+
 
 /* Bootstrap Overrides
 * * * * * * * * * * * * */
@@ -55,6 +63,38 @@ textarea.form-control {
 .panel-title a { 
 	cursor: pointer;
 }
+
+
+/* Media Objects */
+
+.product-list {
+	padding: 30px;
+	border-bottom: 1px solid #eff0f4;
+}
+
+.media, .media-body {
+    background: inherit;
+    overflow: hidden;
+    zoom: 1;
+}
+
+.media-right,
+.media-left,
+.media-middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.media-body {
+    width: 10000px;
+}
+.media-body,
+.media-left,
+.media-right {
+    display: table-cell;
+    vertical-align: top;
+}
+
 
 
 

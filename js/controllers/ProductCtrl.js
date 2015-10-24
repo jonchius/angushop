@@ -1,7 +1,6 @@
 app.controller('ProductCtrl',ProductCtrl);
 
 function ProductCtrl(productService) {
-	this.test = "Hello from Product Controller"
 
 	this.productService = productService;
 	
@@ -21,6 +20,16 @@ ProductCtrl.prototype.addProduct = function(name,description,price,category,quan
 		status: status
 	}
 
-	this.productService.addProduct(request_body);
+	console.log(request_body);
+
+	//this.productService.addProduct(request_body);
+
+  // Reset fields after form submission
+	this.name = '';
+	this.description = '';
+	this.price = '';
+	this.category = '';
+	this.quantity = '';
+	this.status = '';
 
 }

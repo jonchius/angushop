@@ -19,7 +19,8 @@ ProductService.prototype.setProducts = function(products){
 
 	// store the products in local storage so you don't have to make an API
 	// request each time you are on this page.
-	localStorage.setItem('products',JSON.stringify(products));
+	var productStorage = JSON.stringify(products);
+	localStorage.setItem('products', productStorage);
 	this.products = products;
 
 }
@@ -37,7 +38,13 @@ ProductService.prototype.getProducts = function(){
 				return response.data.products;
 		});
 	} else {
-		return JSON.parse(self.products);
+		if (typeof self.products === 'object') {
+			console.log(typeof self.products);
+			return self.products;
+		} else if (typeof self.products === 'string') {
+			console.log(typeof self.products);
+			return JSON.parse(self.products);
+		}
 	}
 
 }
