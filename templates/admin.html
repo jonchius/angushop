@@ -1,12 +1,28 @@
-<h1>
-	Admin Page
-</h1>
-<ul>
-	<li><a href="/#/add_product">Add Product</a></li>
-	<li><a href="/#/view_orders">View Orders</a></li>
-</ul>
-
-<div ng-repeat="product in Ctrl.products">
-	<strong>{{product.name}}</strong>
-	<p>{{product.description}}</p>
+<div class="container-fluid">
+  <h1 class="heading admin-panel text-center">Admin Page</h1>
+</div>
+<!-- <ul>
+  <li><a href="/#/add_product">Add Product</a></li>
+  <li><a href="/#/view_orders">View Orders</a></li>
+</ul> -->
+<div>
+  <uib-tabset justified="true">
+    <uib-tab heading="View Current Products">
+      <!-- Test for Admin Ctrl -->
+      {{Ctrl.test}}
+      <!-- 		  <div ng-repeat="product in Ctrl.products">
+		  	<strong>{{product.name}}</strong>
+		  	<p>{{product.description}}</p>
+			</div> -->
+    </uib-tab>
+    <uib-tab heading="Add a New Product">
+      <div ng-controller="ProductCtrl as Ctrl">
+        <!-- Test for Product Ctrl -->
+        {{Ctrl.test}}
+      </div>
+    </uib-tab>
+    <uib-tab heading="View Orders">
+      <div>test tab content 3</div>
+    </uib-tab>
+  </uib-tabset>
 </div>

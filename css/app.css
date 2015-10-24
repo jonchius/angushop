@@ -27,22 +27,29 @@
 }
 
 
-
-
-
-
 /* Headings */
 
 .heading {
 	color: #686868;
 }
 
-.heading.admin-login {
+.heading.admin-login,
+.heading.admin-panel {
 	margin: 60px auto;
 	font-size: 28px;
 	font-weight: 300;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
+}
+
+
+/* Tabs */
+
+.nav,
+.pagination,
+.carousel,
+.panel-title a { 
+	cursor: pointer;
 }
 
 

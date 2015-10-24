@@ -1,6 +1,7 @@
 app.controller('ProductCtrl',ProductCtrl);
 
 function ProductCtrl(productService) {
+	this.test = "Hello from Product Controller"
 
 	this.productService = productService;
 	
