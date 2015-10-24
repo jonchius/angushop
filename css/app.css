@@ -26,6 +26,10 @@
 	height: 48px;
 }
 
+textarea.form-control {
+	height: 80px;
+}
+
 
 /* Headings */
 
