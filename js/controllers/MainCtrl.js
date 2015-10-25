@@ -1,5 +1,5 @@
 app.controller('MainCtrl',MainCtrl);
 
-function MainCtrl(){
+function MainCtrl() {
 	
 }

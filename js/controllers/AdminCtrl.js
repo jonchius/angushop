@@ -1,12 +1,11 @@
 app.controller('AdminCtrl',AdminCtrl);
 
-function AdminCtrl(productService,$location,products){
+function AdminCtrl(productService, $location, products){
 
 	var self = this;
 
-	//services
 	this.productService = productService;
+	this.$location = $location;
 	this.products = products;
-	console.log(this.products);
 
 }

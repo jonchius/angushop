@@ -20,11 +20,9 @@ ProductCtrl.prototype.addProduct = function(name,description,price,category,quan
 		status: status
 	}
 
-	console.log(request_body);
+	this.productService.addProduct(request_body);
 
-	//this.productService.addProduct(request_body);
-
-  // Reset fields after form submission
+  	// Reset fields after form submission
 	this.name = '';
 	this.description = '';
 	this.price = '';

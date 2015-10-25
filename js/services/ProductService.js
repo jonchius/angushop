@@ -18,7 +18,7 @@ ProductService.prototype.retrieveProducts = function(){
 ProductService.prototype.setProducts = function(products){
 
 	// store the products in local storage so you don't have to make an API
-	// request each time you are on this page.
+	// request each time you are on this page
 	var productStorage = JSON.stringify(products);
 	localStorage.setItem('products', productStorage);
 	this.products = products;
@@ -33,9 +33,9 @@ ProductService.prototype.getProducts = function(){
 	// store them in localStorage and pass back the products as a promise
 	if (this.products == null) {
 		return this.retrieveProducts().then(function(response){
-				console.log(response);
-				self.setProducts(response.data.products);
-				return response.data.products;
+			console.log(response);
+			self.setProducts(response.data.products);
+			return response.data.products;
 		});
 	} else {
 		if (typeof self.products === 'object') {
@@ -51,11 +51,15 @@ ProductService.prototype.getProducts = function(){
 
 ProductService.prototype.addProduct = function(product) {
 
- 	// TODO: add the new product to the current product list and
- 	// return the updated list
+ 	// add the new product to the current product list and return the updated list
 	return this.api.request('/newproduct',product,'POST')
 	.then(function(response){
 		console.log(response);
 	});
 
+}
+
+ProductService.prototype.editProduct = function(product) {
+
+	
 }
