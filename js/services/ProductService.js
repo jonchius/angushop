@@ -49,6 +49,14 @@ ProductService.prototype.getProducts = function(){
 
 }
 
+ProductService.prototype.getProduct = function(id) {
+
+	// get single product in the form of a JSON object
+	var products = JSON.parse(this.products);
+	return products.filter(function(product) {return product.productId === id})[0];
+
+};
+
 ProductService.prototype.addProduct = function(product) {
 
  	// add the new product to the current product list and return the updated list
@@ -59,7 +67,15 @@ ProductService.prototype.addProduct = function(product) {
 
 }
 
-ProductService.prototype.editProduct = function(product) {
-
+ProductService.prototype.editProduct = function(productId, product) {
+	
+	// make API call 
+	return this.api.request('/editproduct/'+productId, product, 'POST')
+	.then(function(response) {
+		console.log("product edited");
+	})
+	.catch(function(response) {
+		console.log("Error: product not edited");
+	});
 	
 }
