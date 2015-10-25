@@ -23,6 +23,7 @@
                         <p>Price: <span ng-bind="product.price | currency"></span></p>
                         <p>Category: <span ng-bind="product.category"></span></p>
                         <p>Quantity: <span ng-bind="product.quantity"></span></p>
+                        <button ng-click="Ctrl.gotoEditProduct(product.productId)">Edit</button>
 
     	            </div>
     	            
@@ -72,14 +73,14 @@
                             
                             </div>
 
-                            <div class="form-group col-sm-4 col-sm-offset-4">
+                            <div class="form-group col-sm-4">
                             	
                                 <label for="quantity">Quantity</label>
                             	<input type="text" class="form-control" ng-model="Ctrl.quantity" placeholder="Quantity">
                             
                             </div>
 
-                            <div class="no-right-padding form-group col-sm-4 col-sm-offset-8">
+                            <div class="form-group no-right-padding col-sm-4">
                             	
                                 <label for="status">Status</label>
                             	
@@ -91,7 +92,7 @@
                             
                             </div>
 
-                            <div>
+                            <div class="form-group col-xs-12">
                             	
                                 <button class="btn btn-default">Add Product</button>
                             
@@ -107,7 +108,7 @@
 
             <uib-tab heading="View Orders">
             
-                
+
             
             </uib-tab>
 
