@@ -9,3 +9,9 @@ function AdminCtrl(productService, $location, products){
 	this.products = products;
 
 }
+
+AdminCtrl.prototype.gotoEditProduct = function(productId) {
+
+	this.$location.path('/admin/edit_product/'+productId);
+
+}
