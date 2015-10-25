@@ -1,0 +1,80 @@
+
+        <div class="container-fluid">
+
+            <h1 class="heading admin-panel text-center">Admin Page</h1>
+
+            <uib-tabset justified="true">
+
+                <uib-tab heading="Edit Product">
+
+                    <div class="row">
+                  
+                        <div class="col-sm-6 col-sm-offset-3">
+                            
+                            <form ng-submit="Ctrl.editProduct(Ctrl.product.name, Ctrl.product.description, Ctrl.product.price, Ctrl.product.category, Ctrl.product.quantity, Ctrl.product.status)">
+
+                                <div class="form-group">
+                                    
+                                    <label for="name">Product Name</label>
+                                    <input type="text" class="form-control" ng-model="Ctrl.product.name" placeholder="Product Name">
+                                
+                                </div>
+
+                                <div class="form-group">
+                                    
+                                    <label for="description">Description</label>
+                                    <textarea class="form-control" ng-model="Ctrl.product.description" placeholder="Description"></textarea>
+                                
+                                </div>
+
+                                <div class="form-group">
+                                	
+                                    <label for="category">Category</label>
+                                	<input type="text" class="form-control" ng-model="Ctrl.product.category" placeholder="Category">
+                                
+                                </div>
+
+                                <div class="form-group no-left-padding col-sm-4">
+                                	
+                                    <label for="price">Price</label>
+                                	<input type="text" class="form-control" ng-model="Ctrl.product.price" placeholder="Price">
+                                
+                                </div>
+
+                                <div class="form-group col-sm-4">
+                                	
+                                    <label for="quantity">Quantity</label>
+                                	<input type="text" class="form-control" ng-model="Ctrl.product.quantity" placeholder="Quantity">
+                                
+                                </div>
+
+                                <div class="form-group no-right-padding col-sm-4">
+                                	
+                                    <label for="status">Status</label>
+                                	
+                                    <select class="form-control" ng-model="Ctrl.product.status">
+                                      	<option value="">Status</option>
+                                      	<option value="active">Active</option>
+                                      	<option value="inactive">Inactive</option>
+                                	</select>
+                                
+                                </div>
+
+                                <div class="form-group col-xs-12">
+                                	
+                                    <button class="btn btn-default">Edit Product</button>
+                                
+                                </div>
+                            
+                            </form>
+                        
+                        </div>
+                
+                    </div>
+
+                </uib-tab>
+
+            </uib-tabset>
+
+        </div>
+            
