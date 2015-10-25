@@ -24,6 +24,10 @@ app.config(function($routeProvider,$httpProvider){
 			}
 		}
 	})
+	.when('/admin/edit_product/:editproductId', {
+		templateUrl:'templates/edit_product.html',
+		controller: 'ProductCtrl as Ctrl'
+	})
 	.otherwise({
 		redirectTo:'/'
 	});
