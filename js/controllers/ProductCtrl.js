@@ -4,7 +4,14 @@ function ProductCtrl($routeParams, productService, $location) {
 
 	this.productService = productService;
 	this.product = this.productService.getProduct($routeParams.editproductId);
+	this.$location = $location;
 	
+}
+
+ProductCtrl.prototype.cancel = function() {
+
+	this.$location.path('/admin');
+
 }
 
 ProductCtrl.prototype.editProduct = function(name,description,price,category,quantity,status){
