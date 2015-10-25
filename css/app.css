@@ -5,12 +5,16 @@
 	text-align: center;
 }
 
-.no-right-padding {
-	padding-right: 0;
-}
+@media (min-width: 992px) {
 
-.no-left-padding {
-	padding-left: 0;
+	.no-right-padding {
+		padding-right: 0;
+	}
+
+	.no-left-padding {
+		padding-left: 0;
+	}
+
 }
 
 
