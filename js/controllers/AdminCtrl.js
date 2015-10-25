@@ -1,17 +1,29 @@
 app.controller('AdminCtrl',AdminCtrl);
 
-function AdminCtrl(productService, $location, products){
+function AdminCtrl(productService, $location, products, $uibModal){
 
 	var self = this;
 
 	this.productService = productService;
 	this.$location = $location;
 	this.products = products;
+	this.$uibModal = $uibModal;
 
 }
 
-AdminCtrl.prototype.gotoEditProduct = function(productId) {
+AdminCtrl.prototype.gotoEditProduct = function(selectedProduct) {
 
-	this.$location.path('/admin/edit_product/'+productId);
+	this.$uibModal.open({
+		templateUrl: 'templates/edit_product.html',
+		controller: 'EditProductModalCtrl as Ctrl',
+		animation: true,
+		resolve: {
+			productToEdit: function() {
+				return selectedProduct;
+			}
+		}
+	});
+
+	// this.$location.path('/admin/edit_product/'+productId);
 
 }

@@ -1,82 +1,99 @@
+<form novalidate name="editProduct" ng-submit="Ctrl.saveEdits(Ctrl.productToEdit)">
+  <div class="modal-header">
+    <h3 class="modal-title">Edit Product</h3>
+  </div>
+  <!-- end modal header -->
 
-        <div class="container-fluid">
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="name">Product Name</label>
+      <input type="text" class="form-control" ng-model="Ctrl.productToEdit.name" ng-model-options="{updateOn: 'submit'}">
+    </div>
 
-            <h1 class="heading admin-panel text-center">Admin Page</h1>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" ng-model="Ctrl.productToEdit.description" ng-model-options="{updateOn: 'submit'}"></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="category">Category</label>
+      <input type="text" class="form-control" ng-model="Ctrl.productToEdit.category" ng-model-options="{updateOn: 'submit'}">
+    </div>
 
-            <uib-tabset justified="true">
+    <div class="form-group modal-column">
+      <label for="price">Price</label>
+      <input type="text" class="form-control" ng-model="Ctrl.productToEdit.price" ng-model-options="{updateOn: 'submit'}">
+    </div>
 
-                <uib-tab heading="Edit Product">
+    <div class="form-group modal-column">
+      <label for="quantity">Quantity</label>
+      <input type="text" class="form-control" ng-model="Ctrl.productToEdit.quantity" ng-model-options="{updateOn: 'submit'}">
+    </div>
 
-                    <div class="row">
-                  
-                        <div class="col-sm-6 col-sm-offset-3">
-                            
-                            <form ng-submit="Ctrl.editProduct(Ctrl.product.name, Ctrl.product.description, Ctrl.product.price, Ctrl.product.category, Ctrl.product.quantity, Ctrl.product.status)">
+    <div class="form-group modal-column">
+      <label for="status">Status</label>
+      <select class="form-control" ng-model="Ctrl.productToEdit.status" ng-model-options="{updateOn: 'submit'}">
+        <option value="">Status</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+    </div>
+  </div>
+  <!-- end modal body -->
 
-                                <div class="form-group">
-                                    
-                                    <label for="name">Product Name</label>
-                                    <input type="text" class="form-control" ng-model="Ctrl.product.name" placeholder="Product Name">
-                                
-                                </div>
+  <div class="modal-footer">
+    <button ng-click="Ctrl.cancel()" type="button" class="btn btn-default">Cancel</button>
+    <button class="btn btn-primary">Save Changes</button>
+  </div>
+  <!-- end modal footer -->
 
-                                <div class="form-group">
-                                    
-                                    <label for="description">Description</label>
-                                    <textarea class="form-control" ng-model="Ctrl.product.description" placeholder="Description"></textarea>
-                                
-                                </div>
+</form>
 
-                                <div class="form-group">
-                                	
-                                    <label for="category">Category</label>
-                                	<input type="text" class="form-control" ng-model="Ctrl.product.category" placeholder="Category">
-                                
-                                </div>
 
-                                <div class="form-group no-left-padding col-sm-4">
-                                	
-                                    <label for="price">Price</label>
-                                	<input type="text" class="form-control" ng-model="Ctrl.product.price" placeholder="Price">
-                                
-                                </div>
 
-                                <div class="form-group col-sm-4">
-                                	
-                                    <label for="quantity">Quantity</label>
-                                	<input type="text" class="form-control" ng-model="Ctrl.product.quantity" placeholder="Quantity">
-                                
-                                </div>
 
-                                <div class="form-group no-right-padding col-sm-4">
-                                	
-                                    <label for="status">Status</label>
-                                	
-                                    <select class="form-control" ng-model="Ctrl.product.status">
-                                      	<option value="">Status</option>
-                                      	<option value="active">Active</option>
-                                      	<option value="inactive">Inactive</option>
-                                	</select>
-                                
-                                </div>
-
-                                <div class="form-group text-center col-xs-12">
-                                	
-                                    <button class="btn btn-success">Edit Product</button>
-
-                                    <button class="btn btn-danger" ng-click="Ctrl.cancel()">Cancel</button>
-                                
-                                </div>
-                            
-                            </form>
-                        
-                        </div>
-                
-                    </div>
-
-                </uib-tab>
-
-            </uib-tabset>
-
+<!-- <div class="container-fluid">
+  <h1 class="heading admin-panel text-center">Admin Page</h1>
+  <uib-tabset justified="true">
+    <uib-tab heading="Edit Product">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <form ng-submit="Ctrl.editProduct(Ctrl.product.name, Ctrl.product.description, Ctrl.product.price, Ctrl.product.category, Ctrl.product.quantity, Ctrl.product.status)">
+            <div class="form-group">
+              <label for="name">Product Name</label>
+              <input type="text" class="form-control" ng-model="Ctrl.product.name" placeholder="Product Name">
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea class="form-control" ng-model="Ctrl.product.description" placeholder="Description"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="category">Category</label>
+              <input type="text" class="form-control" ng-model="Ctrl.product.category" placeholder="Category">
+            </div>
+            <div class="form-group no-left-padding col-sm-4">
+              <label for="price">Price</label>
+              <input type="text" class="form-control" ng-model="Ctrl.product.price" placeholder="Price">
+            </div>
+            <div class="form-group col-sm-4">
+              <label for="quantity">Quantity</label>
+              <input type="text" class="form-control" ng-model="Ctrl.product.quantity" placeholder="Quantity">
+            </div>
+            <div class="form-group no-right-padding col-sm-4">
+              <label for="status">Status</label>
+              <select class="form-control" ng-model="Ctrl.product.status">
+                <option value="">Status</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+              </select>
+            </div>
+            <div class="form-group text-center col-xs-12">
+              <button class="btn btn-success">Edit Product</button>
+              <button class="btn btn-danger" ng-click="Ctrl.cancel()">Cancel</button>
+            </div>
+          </form>
         </div>
-            
+      </div>
+    </uib-tab>
+  </uib-tabset>
+</div> -->

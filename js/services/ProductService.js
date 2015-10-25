@@ -69,13 +69,6 @@ ProductService.prototype.addProduct = function(product) {
 
 ProductService.prototype.editProduct = function(productId, product) {
 	
-	// make API call 
 	return this.api.request('/editproduct/'+productId, product, 'POST')
-	.then(function(response) {
-		console.log("product edited");
-	})
-	.catch(function(response) {
-		console.log("Error: product not edited");
-	});
 	
 }
