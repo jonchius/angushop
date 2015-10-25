@@ -1,6 +1,7 @@
 var app = angular.module('ShopApp',['ngRoute', 'ui.bootstrap']);
 
 app.config(function($routeProvider,$httpProvider){
+	
 	$routeProvider.when('/',{
 		templateUrl:'templates/home.html',
 		controller:'MainCtrl as Ctrl',
@@ -13,7 +14,7 @@ app.config(function($routeProvider,$httpProvider){
 		templateUrl:'templates/admin.html',
 		controller:'AdminCtrl as Ctrl',
 		resolve:{
-			path:function($location){
+			path: function($location){
 				if(localStorage.getItem('authToken') == null){
 					$location.path('/login');
 				}
@@ -23,23 +24,20 @@ app.config(function($routeProvider,$httpProvider){
 			}
 		}
 	})
-	// .when('/add_product',{
-	// 	templateUrl:'templates/add_product.html',
-	// 	controller:'ProductCtrl as Ctrl'
-	// })
 	.otherwise({
 		redirectTo:'/'
 	});
 
 	$httpProvider.interceptors.push(function() {
-    return {
-      'request': function(config) {
-        config.headers = config.headers || {};
-        if (localStorage.authToken) {
-          config.headers.Authorization = localStorage.authToken;
-        }
-        return config;
-      }
-    };
-  });
+    	return {
+      		'request': function(config) {
+        		config.headers = config.headers || {};
+        		if (localStorage.authToken) {
+          			config.headers.Authorization = localStorage.authToken;
+        		}
+        		return config;
+      		}
+    	};
+  	});
+
 });
