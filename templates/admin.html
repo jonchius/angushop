@@ -1,88 +1,116 @@
-<div class="container-fluid">
-  <h1 class="heading admin-panel text-center">Admin Page</h1>
-  <!-- <ul>
-  <li><a href="/#/add_product">Add Product</a></li>
-  <li><a href="/#/view_orders">View Orders</a></li>
-</ul> -->
-  <div>
-    <uib-tabset justified="true">
-      <uib-tab heading="View Current Products">
-        <div>
-	        <div class="row product-list" ng-repeat="product in Ctrl.products track by product.productId">
+    
+    <div class="container-fluid">
+      
+        <h1 class="heading admin-panel text-center">Admin Page</h1>
 
-						<div class="media">
-	            <div class="media-left media-middle">
-	              <img src="http://lorempixel.com/output/animals-q-g-200-200-1.jpg" alt="placeholder">
-	            </div>
-	        
-	            <div class="media-body">
-	              <h4 class="media-heading">{{product.name}}</h4>
-	              <p>Description: {{product.description}}</p>
-	              <p>Price: {{product.price | currency}}</p>
-	              <p>Category: {{product.category}}</p>
-	              <p>Quantity: {{product.quantity}}</p>
-	            </div>
-	            <div class="media-right media-middle">
-	              <span>{{product.status}}</span>
-	            </div>
-	          </div>
+        <uib-tabset justified="true">
 
-					</div>
-				</div>
-      </uib-tab>
+            <uib-tab heading="View Products">
+           
+                <div class="row product-list media" ng-repeat="product in Ctrl.products track by product.productId">
+    	            
+                    <div class="media-left media-middle">
+                    
+                        <!-- change this to actual image later -->
+                        <img src="http://lorempixel.com/output/animals-q-g-200-200-1.jpg" alt="placeholder">
+    	            
+                    </div>
+    	        
+    	            <div class="media-body">
 
-      <uib-tab heading="Add a New Product">
-        <div ng-controller="ProductCtrl as Ctrl">
-          <div class="row">
-            <div class="col-sm-6 col-sm-offset-3">
-              <form ng-submit="Ctrl.addProduct(Ctrl.name, Ctrl.description, Ctrl.price, Ctrl.category, Ctrl.quantity, Ctrl.status)">
-                <div class="form-group">
-                  <label for="name">Product Name</label>
-                  <input type="text" class="form-control" ng-model="Ctrl.name" placeholder="Product Name">
+                        <h4 ng-bind="product.name" class="media-heading"></h4>
+                        <p ng-bind="product.description"></p>
+                        <p>Price: <span ng-bind="product.price | currency"></span></p>
+                        <p>Category: <span ng-bind="product.category"></span></p>
+                        <p>Quantity: <span ng-bind="product.quantity"></span></p>
+
+    	            </div>
+    	            
+                    <div class="media-right media-middle">
+    	           
+                        <span ng-bind="product.status"></span>
+    	            
+                    </div>
+    				
                 </div>
+    				
+            </uib-tab>
 
-                <div class="form-group">
-                  <label for="description">Description</label>
-                  <textarea class="form-control" ng-model="Ctrl.description" placeholder="Description"></textarea>
+            <uib-tab heading="Add Product">
+                
+                <div class="row" ng-controller="ProductCtrl as Ctrl">
+              
+                    <div class="col-sm-6 col-sm-offset-3">
+                        
+                        <form ng-submit="Ctrl.addProduct(Ctrl.name, Ctrl.description, Ctrl.price, Ctrl.category, Ctrl.quantity, Ctrl.status)">
+
+                            <div class="form-group">
+                                
+                                <label for="name">Product Name</label>
+                                <input type="text" class="form-control" ng-model="Ctrl.name" placeholder="Product Name">
+                            
+                            </div>
+
+                            <div class="form-group">
+                                
+                                <label for="description">Description</label>
+                                <textarea class="form-control" ng-model="Ctrl.description" placeholder="Description"></textarea>
+                            
+                            </div>
+
+                            <div class="form-group">
+                            	
+                                <label for="category">Category</label>
+                            	<input type="text" class="form-control" ng-model="Ctrl.category" placeholder="Category">
+                            
+                            </div>
+
+                            <div class="no-left-padding form-group col-sm-4">
+                            	
+                                <label for="price">Price</label>
+                            	<input type="text" class="form-control" ng-model="Ctrl.price" placeholder="Price">
+                            
+                            </div>
+
+                            <div class="form-group col-sm-4 col-sm-offset-4">
+                            	
+                                <label for="quantity">Quantity</label>
+                            	<input type="text" class="form-control" ng-model="Ctrl.quantity" placeholder="Quantity">
+                            
+                            </div>
+
+                            <div class="no-right-padding form-group col-sm-4 col-sm-offset-8">
+                            	
+                                <label for="status">Status</label>
+                            	
+                                <select class="form-control" ng-model="Ctrl.status">
+                                  	<option value="" selected>Status</option>
+                                  	<option value="active">Active</option>
+                                  	<option value="inactive">Inactive</option>
+                            	</select>
+                            
+                            </div>
+
+                            <div>
+                            	
+                                <button class="btn btn-default">Add Product</button>
+                            
+                            </div>
+                        
+                        </form>
+                    
+                    </div>
+            
                 </div>
+            
+            </uib-tab>
 
-                <div class="form-group">
-                	<label for="category">Category</label>
-                	<input type="text" class="form-control" ng-model="Ctrl.category" placeholder="Category">
-                </div>
+            <uib-tab heading="View Orders">
+            
+                
+            
+            </uib-tab>
 
-                <div class="no-left-padding form-group col-sm-4">
-                	<label for="price">Price</label>
-                	<input type="text" class="form-control" ng-model="Ctrl.price" placeholder="Price">
-                </div>
+        </uib-tabset>
 
-                <div class="form-group col-sm-4 col-sm-offset-4">
-                	<label for="quantity">Quantity</label>
-                	<input type="text" class="form-control" ng-model="Ctrl.quantity" placeholder="Quantity">
-                </div>
-
-                <div class="no-right-padding form-group col-sm-4 col-sm-offset-8">
-                	<label for="status">Status</label>
-                	<select class="form-control" ng-model="Ctrl.status">
-                  	<option value="" selected>Status</option>
-                  	<option value="active">Active</option>
-                  	<option value="inactive">Inactive</option>
-                	</select>
-                </div>
-
-                <div>
-                	<button class="btn btn-default">Add Product</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </uib-tab>
-
-      <uib-tab heading="View Orders">
-        <div>test tab content 3</div>
-      </uib-tab>
-    </uib-tabset>
-  </div>
-</div>
-<!-- container-fluid -->
+    </div>
