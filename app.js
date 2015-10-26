@@ -24,8 +24,16 @@ app.config(function($routeProvider,$httpProvider){
 			}
 		}
 	})
-	.when('/admin/edit_product/:editproductId', {
+	.when('/admin/edit_product/:productId', {
 		templateUrl:'templates/edit_product.html',
+		controller: 'ProductCtrl as Ctrl'
+	})
+	.when('/products', {
+		templateUrl:'templates/products.html',
+		controller: 'ProductCtrl as Ctrl'
+	})
+	.when('/products/:productId', {
+		templateUrl:'templates/product.html',
 		controller: 'ProductCtrl as Ctrl'
 	})
 	.otherwise({
