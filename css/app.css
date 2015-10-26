@@ -47,17 +47,11 @@ textarea.form-control {
 
 .heading {
 	color: #686868;
-}
-
-.heading.admin-login,
-.heading.admin-panel {
 	margin: 60px auto;
-	font-size: 28px;
 	font-weight: 300;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 }
-
 
 /* Tabs */
 
@@ -99,16 +93,8 @@ textarea.form-control {
     vertical-align: top;
 }
 
-
 /* Modal */
 .modal-column {
 	width: 32.5%;
 	display: inline-block;
 }
-
-
-
-
-
-
-
