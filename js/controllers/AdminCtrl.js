@@ -15,3 +15,9 @@ AdminCtrl.prototype.gotoEditProduct = function(productId) {
 	this.$location.path('/admin/edit_product/'+productId);
 
 }
+
+AdminCtrl.prototype.gotoShop = function() {
+
+	this.$location.path('/');
+	
+}
