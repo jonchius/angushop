@@ -2,9 +2,10 @@ app.controller('ProductCtrl',ProductCtrl);
 
 function ProductCtrl($routeParams, productService, $location) {
 
-	this.productService = productService;
-	this.product = this.productService.getProduct($routeParams.editproductId);
 	this.$location = $location;
+	this.productService = productService;
+	this.product = this.productService.getProduct($routeParams.productId);
+	this.products = this.productService.getProducts();
 	
 }
 
@@ -12,6 +13,10 @@ ProductCtrl.prototype.cancel = function() {
 
 	this.$location.path('/admin');
 
+}
+
+ProductCtrl.prototype.gotoProduct = function(productId) {
+	this.$location.path('/products/'+productId);
 }
 
 ProductCtrl.prototype.editProduct = function(name,description,price,category,quantity,status){
