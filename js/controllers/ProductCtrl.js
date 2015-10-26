@@ -1,9 +1,9 @@
 app.controller('ProductCtrl',ProductCtrl);
 
-function ProductCtrl($routeParams, productService, $location) {
+function ProductCtrl(productService, $location) {
 
 	this.productService = productService;
-	this.product = this.productService.getProduct($routeParams.editproductId);
+	// this.product = this.productService.getProduct($routeParams.editproductId);
 	this.$location = $location;
 	
 }
