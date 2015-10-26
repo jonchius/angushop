@@ -17,7 +17,12 @@
     
     <div class="form-group">
       <label for="category">Category</label>
-      <input type="text" class="form-control" ng-model="Ctrl.productToEdit.category" ng-model-options="{updateOn: 'submit'}">
+      <select class="form-control" ng-model="Ctrl.productToEdit.category" ng-model-options="{updateOn: 'submit'}">
+        <option value="Abstract">Abstract</option>
+        <option value="Buildings">Buildings</option>
+        <option value="Skylines">Skylines</option>
+        <option value="Streets">Streets</option>
+      </select>
     </div>
 
     <div class="form-group modal-column">
@@ -33,7 +38,6 @@
     <div class="form-group modal-column">
       <label for="status">Status</label>
       <select class="form-control" ng-model="Ctrl.productToEdit.status" ng-model-options="{updateOn: 'submit'}">
-        <option value="">Status</option>
         <option value="active">Active</option>
         <option value="inactive">Inactive</option>
       </select>

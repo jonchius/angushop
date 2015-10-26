@@ -68,7 +68,12 @@
                             <div class="form-group">
                             	
                                 <label for="category">Category</label>
-                            	<input type="text" class="form-control" ng-model="Ctrl.category" placeholder="Category">
+                                <select class="form-control" ng-model="Ctrl.category">
+                                  <option value="Abstract">Abstract</option>
+                                  <option value="Buildings">Buildings</option>
+                                  <option value="Skylines">Skylines</option>
+                                  <option value="Streets">Streets</option>
+                                </select>
                             
                             </div>
 
@@ -91,9 +96,8 @@
                                 <label for="status">Status</label>
                             	
                                 <select class="form-control" ng-model="Ctrl.status">
-                                  	<option value="" selected>Status</option>
                                   	<option value="active">Active</option>
-                                  	<option value="inactive">Inactive</option>
+                                  	<option value="inactive" ng-selected="true">Inactive</option>
                             	</select>
                             
                             </div>
