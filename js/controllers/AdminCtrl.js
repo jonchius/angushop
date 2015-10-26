@@ -27,3 +27,9 @@ AdminCtrl.prototype.gotoEditProduct = function(selectedProduct) {
 	// this.$location.path('/admin/edit_product/'+productId);
 
 }
+
+AdminCtrl.prototype.gotoShop = function() {
+
+	this.$location.path('/');
+	
+}

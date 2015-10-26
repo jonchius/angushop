@@ -1,0 +1,33 @@
+	
+	<div class="container-fluid text-center">
+      
+        <h1 class="heading">ng-Shop</h1>
+
+       	<div class="row text-left product-list media">
+
+       		<div class="media-left">
+            
+                <!-- change this to actual image later -->
+                <p><img src="http://lorempixel.com/400/400/animals" alt="placeholder"></p>
+            
+            </div>
+   
+            <div class="media-body">
+
+                <h2 ng-bind="Ctrl.product.name" class="media-heading"></h4>
+                <p ng-bind="Ctrl.product.description"></p>
+                <p ng-bind="Ctrl.product.category"></p>
+                
+                <h3><span ng-bind="Ctrl.product.price | currency"></span></h3>
+                
+                <!-- use later but only if user is admin <button ng-click="Ctrl.gotoEditProduct(product.productId)">Edit</button>-->
+
+            </div> 
+
+            <div class="media-right">
+            </div>
+            
+        </div>
+
+    </div>
+
