@@ -1,18 +1,29 @@
-	
-	<div class="container-fluid text-center">
-      
-        <h1 class="heading">ng-Shop</h1>
+<div class="container text-center">
+  <h1 class="heading">ng-Shop</h1>
+  <div class="row">
+    <div ng-repeat="product in Ctrl.products | filter: { status: 'active' }:true" class="col-sm-3 col-md-3">
+      <div class="thumbnail">
+        <img src="http://lorempixel.com/output/animals-q-g-500-500-1.jpg" alt="placeholder">
+        <div class="caption">
+          <h3 ng-bind="product.name" class="text-left"></h3>
+          <p ng-bind="product.price | currency" class="text-left"></p>
 
-       	<div class="row text-left product-list">
+          <button type="button" class="btn btn-default btn-md cart-btn">
+            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--          <div class="row text-left product-list">
 
-       		<div ng-repeat="product in Ctrl.products | filter: { status: 'active' }:true" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div ng-repeat="product in Ctrl.products | filter: { status: 'active' }:true" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
             
-                <!-- change this to actual image later -->
+                change this to actual image later
                 <p><img src="http://lorempixel.com/800/800/animals" class="img-responsive" alt="placeholder" ng-click="Ctrl.gotoProduct(product.productId)"></p>
             
             </div>
 
-        </div>
-
-    </div>
-
+        </div> -->
+</div>

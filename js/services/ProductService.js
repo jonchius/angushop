@@ -49,13 +49,13 @@ ProductService.prototype.getProducts = function(){
 
 }
 
-ProductService.prototype.getProduct = function(id) {
+// ProductService.prototype.getProduct = function(id) {
 
-	// get single product in the form of a JSON object
-	var products = JSON.parse(this.products);
-	return products.filter(function(product) {return product.productId === id})[0];
+// 	// get single product in the form of a JSON object
+// 	var products = JSON.parse(this.products);
+// 	return products.filter(function(product) {return product.productId === id})[0];
 
-};
+// };
 
 ProductService.prototype.addProduct = function(product) {
 

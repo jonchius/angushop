@@ -5,7 +5,7 @@ function ProductCtrl(productService, $routeParams, $location) {
 	this.productService = productService;
 	this.$location = $location;
 	this.productService = productService;
-	this.product = this.productService.getProduct($routeParams.productId);
+	// this.product = this.productService.getProduct($routeParams.productId);
 	this.products = this.productService.getProducts();
 	
 }
