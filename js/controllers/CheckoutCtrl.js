@@ -22,7 +22,10 @@ CheckoutCtrl.prototype.close = function() {
 
 	this.orderService.recordOrder(request_body);
 
-	this.cartservice.cart = [];
+	this.cartService.cart = [];
+	this.cartService.final_total = 0;
+	this.cartService.tax = 0;
+	this.cartService.total = 0;
 
 	this.$uibModalInstance.close();
 

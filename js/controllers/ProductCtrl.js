@@ -12,9 +12,6 @@ function ProductCtrl(productService, cartService, $routeParams, $location) {
 }
 
 ProductCtrl.prototype.addtoCart = function(product, quantity) {
-	console.log("working");
-	console.log(product);
-	console.log(quantity);
 	this.cartService.addtoCart(product, quantity);
 }
 
