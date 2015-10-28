@@ -6,20 +6,20 @@
 
   <div class="modal-body">
     
-    <div ng-repeat="item in Ctrl.cart">
+    <div ng-repeat="item in Ctrl.cartService.cart">
     	<p>an item</p>
     </div>
 
-    <div ng-hide="Ctrl.cart.length > 0">
+    <div ng-hide="Ctrl.cartService.cart.length > 0">
     	<p>Your cart has no items</p>
     </div>
 
     <div class="well text-right">
     	
-    	<p><small><strong>Subtotal</strong>: <span ng-bind="Ctrl.total | currency"></span></small></p>
-    	<p><small><strong>Tax</strong>: <span ng-bind="Ctrl.tax | currency"></span></small></p>
+    	<p><small><strong>Subtotal</strong>: <span ng-bind="Ctrl.cartService.total | currency"></span></small></p>
+    	<p><small><strong>Tax</strong>: <span ng-bind="Ctrl.cartService.tax | currency"></span></small></p>
     	<hr />
-		<p><strong>Total</strong>: <span ng-bind="Ctrl.findTotal() | currency"></span></p>
+		<p><strong>Total</strong>: <span ng-bind="Ctrl.cartService.findTotal() | currency"></span></p>
 
 	</div>
 
@@ -27,8 +27,8 @@
 
   <div class="modal-footer">
   	<button class="btn btn-primary" ng-click="Ctrl.close()">Close Cart</button>
-  	<button class="btn btn-danger" ng-click="Ctrl.clear()">Clear Cart</button>
-    <button class="btn btn-success" ng-click="Ctrl.checkout()">Checkout</button>
+  	<button class="btn btn-danger" ng-click="Ctrl.clear()" ng-show="Ctrl.cartService.cart.length > 0">Clear Cart</button>
+    <button class="btn btn-success" ng-show="Ctrl.cartService.cart.length > 0" ng-click="Ctrl.checkout()">Checkout</button>
   </div>
 
 </form>
