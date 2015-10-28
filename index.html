@@ -59,7 +59,7 @@
 		          <button type="submit" class="btn btn-primary">Go</button>
 		        </div>
 
-		        <button class="btn cart-btn" ng-click="Ctrl.viewCart()"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> View Cart ({{Ctrl.cartService.cart.length}})</button>
+		        <button class="btn cart-btn" ng-click="Ctrl.viewCart()"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> View Cart ({{Ctrl.cartService.findTotal() | currency}})</button>
 		      </form>
 		    </div><!--/.navbar-collapse -->
 		  </div>
