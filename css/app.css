@@ -36,11 +36,11 @@
 	padding: 8px 18px;
 }
 
-.btn,
+/*.btn,
 .btn-default,
 .btn-success {
 	color: #fafafa;
-}
+}*/
 
 .btn-primary {
 	background-color: #081f33;
@@ -299,6 +299,12 @@ body {
 
 .product-details .form-control {
 	max-width: 200px;
+}
+
+/* Admin Login */
+
+.admin-login .btn {
+	color: #081f33;
 }
 
 

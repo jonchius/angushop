@@ -18,7 +18,7 @@
                     <div class="media-left media-middle">
                     
                         <!-- change this to actual image later -->
-                        <img src="http://lorempixel.com/200/200/technics" alt="placeholder">
+                        <img style="max-width: 200px;" src="img/donriver.jpg" alt="placeholder">
     	            
                     </div>
     	        
@@ -29,15 +29,10 @@
                         <p>Price: <span ng-bind="product.price | currency"></span></p>
                         <p>Category: <span ng-bind="product.category"></span></p>
                         <p>Quantity: <span ng-bind="product.quantity"></span></p>
+                        <p>Status: <span ng-bind="product.status"></span></p>
                         <button ng-click="Ctrl.gotoEditProduct(product)">Edit</button>
 
     	            </div>
-    	            
-                    <div class="media-right media-middle">
-    	           
-                        <span ng-bind="product.status"></span>
-    	            
-                    </div>
     				
                 </div>
     				
