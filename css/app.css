@@ -1,3 +1,11 @@
+/* Global */
+
+* {
+	font-family: 'Lato', 'Helvetica Neue' sans-serif;
+	font-weight: 300;
+}
+
+
 /* Helper Classes
  * * * * * * * * * * * * */
 
@@ -34,9 +42,15 @@
 	color: #fafafa;
 }
 
+.btn-primary {
+	background-color: #081f33;
+}
+
 .cart-btn {
-	display: block;
 	text-align: left;
+	background: transparent;
+	border: 1px solid #081f33;
+	color: #081f33;;
 }
 
 /* Forms */
@@ -119,13 +133,17 @@ textarea.form-control {
 
 /* Navbar */
 .navbar-default {
-		background-color: #f3f5f6;
+		background-color: transparent;
 		border: 0;
 }
 
 .navbar-brand {
 	font-size: 22px;
 	font-weight: 300;
+}
+
+.navbar-default .navbar-brand {
+	color: #081f33;
 }
 
 .navbar .form-group {
@@ -142,7 +160,15 @@ textarea.form-control {
 
 /* Page-Specific Styles */
 body {
-	background-color: #f3f5f6;
+	background-color: #fff;
+}
+
+.homepage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1100;
 }
 
 .home {
@@ -172,6 +198,7 @@ body {
 	border: 1px solid #fafafa;
 	box-sizing: content-box;
 	font-size: 18px;
+	font-weight: 300;
 	line-height: 18px;
 	padding: 7px 25px;
 
@@ -180,9 +207,8 @@ body {
 }
 
 .home .call-to-action:hover {
-	border: 1px solid navy;
+	border: 1px solid #081f33;
 }
-
 
 .homepage .slide {
 	-webkit-transition: all 650ms ease-out;
@@ -214,7 +240,8 @@ body {
 
 /* Shop Products */
 .shop-products.container {
-	margin-top: 165px;
+	margin-top: 140px;
+	color: #081f33;
 }
 
 .shop-products .narrow-gutter {
@@ -234,15 +261,16 @@ body {
 	width: calc(100% - 4px);
 	height: 99%;
 	height: calc(100% - 4px);
-	background-color: #fff;
-	opacity: 0.6;
+	background-color: rgba(255, 255, 255, 0.75);
 	text-align: left;
 	padding-top: 20px;
 	box-sizing: padding-box;
 	cursor: pointer;
+	color: #081f33;
+	font-size: 16px;
 
-	-webkit-transition: all 500ms ease-out;
-	transition: all 500ms ease-out;
+	-webkit-transition: all 250ms ease-in-out;
+	transition: all 250ms ease-in-out;
 }
 
 .overlay > p {
@@ -250,8 +278,27 @@ body {
 }
 
 .hovered .overlay {
-	top: 50%;
-	opacity: 0.8;
+	top: 60%;
+}
+
+.product-details.container {
+	margin-top: 140px;
+}
+
+.product-details h2 {
+	margin-bottom: 20px;
+}
+
+.product-details p {
+	font-size: 18px;
+}
+
+.product-details .cart-btn {
+	padding: 10px 20px;
+}
+
+.product-details .form-control {
+	max-width: 200px;
 }
 
 

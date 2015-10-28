@@ -1,41 +1,61 @@
-	
-	<div class="container-fluid text-center">
-      
-        <h1 class="heading">ng-Shop</h1>
+<div class="product-details container">
 
-       	<div class="row text-left product-list media">
-
-       		<div class="media-left">
-            
-                <!-- change this to actual image later -->
-                <p><img src="http://lorempixel.com/400/400/animals" alt="placeholder"></p>
-            
-            </div>
-   
-            <div class="media-body">
-
-                <h2 ng-bind="Ctrl.product.name" class="media-heading"></h4>
-                <p ng-bind="Ctrl.product.description"></p>
-                <p ng-bind="Ctrl.product.category"></p>
-                
-                <h3><span ng-bind="Ctrl.product.price | currency"></span></h3>
-                
-                <!-- use later but only if user is admin <button ng-click="Ctrl.gotoEditProduct(product.productId)">Edit</button>-->
-                <form ng-submit="Ctrl.addtoCart(Ctrl.product, Ctrl.quantity)">
-                    <div class="form-group modal-column">
-                        <label for="quantity">Quantity</label>
-                        <input type="number" class="form-control" ng-model="Ctrl.quantity">
-                    </div>
-
-                    <button>Add to Cart</button>
-                </form>
-
-            </div> 
-
-            <div class="media-right">
-            </div>
-            
+   	<div class="row text-left">
+        <div class="col-sm-4 col-sm-offset-1">
+            <img src="img/donriver.jpg" class="img-responsive" alt="placeholder">
         </div>
 
+        <div class="col-sm-7">
+            <div>
+                <h2 ng-bind="Ctrl.product.name" class="media-heading"></h2>
+                <p>Description: <span ng-bind="Ctrl.product.description"></span></p>
+                <p>Category: <span ng-bind="Ctrl.product.category"></span></p>
+
+                <p><span ng-bind="Ctrl.product.price | currency"></span></p>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" class="form-control" ng-model="Ctrl.quantity">
+            </div>
+            <div>
+                <button class="cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <!-- end col -->
     </div>
+    <!-- end row -->
+
+</div>
+<!-- end product-details container -->
+
+<!--
+====
+
+
+        <div class="media-body">
+
+            <h2 ng-bind="Ctrl.product.name" class="media-heading"></h2>
+            <p ng-bind="Ctrl.product.description"></p>
+            <p ng-bind="Ctrl.product.category"></p>
+            
+            <h3><span ng-bind="Ctrl.product.price | currency"></span></h3>
+            
+            use later but only if user is admin <button ng-click="Ctrl.gotoEditProduct(product.productId)">Edit</button>
+            <form ng-submit="Ctrl.addtoCart(Ctrl.product, Ctrl.quantity)">
+                <div class="form-group modal-column">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" class="form-control" ng-model="Ctrl.quantity">
+                </div>
+
+                <button>Add to Cart</button>
+            </form>
+
+        </div> 
+        <div class="media-left">
+        
+            change this to actual image later
+            <p><img src="http://lorempixel.com/400/400/animals" alt="placeholder"></p>
+        
+        </div>
+-->
 
