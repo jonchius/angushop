@@ -222,6 +222,10 @@ body {
 	overflow: hidden;
 }
 
+.tile {
+	cursor: pointer;
+}
+
 .overlay {
 	position: absolute;
 	top: 100%;
@@ -235,6 +239,7 @@ body {
 	text-align: left;
 	padding-top: 20px;
 	box-sizing: padding-box;
+	cursor: pointer;
 
 	-webkit-transition: all 500ms ease-out;
 	transition: all 500ms ease-out;

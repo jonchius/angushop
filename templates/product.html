@@ -21,6 +21,14 @@
                 <h3><span ng-bind="Ctrl.product.price | currency"></span></h3>
                 
                 <!-- use later but only if user is admin <button ng-click="Ctrl.gotoEditProduct(product.productId)">Edit</button>-->
+                <form ng-submit="Ctrl.addtoCart(Ctrl.product, Ctrl.quantity)">
+                    <div class="form-group modal-column">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" class="form-control" ng-model="Ctrl.quantity">
+                    </div>
+
+                    <button>Add to Cart</button>
+                </form>
 
             </div> 
 

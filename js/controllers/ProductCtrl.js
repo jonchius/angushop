@@ -11,9 +11,11 @@ function ProductCtrl(productService, cartService, $routeParams, $location) {
 	
 }
 
-ProductCtrl.prototype.addtoCart = function(product) {
+ProductCtrl.prototype.addtoCart = function(product, quantity) {
 	console.log("working");
-	this.cartService.addtoCart(product);
+	console.log(product);
+	console.log(quantity);
+	this.cartService.addtoCart(product, quantity);
 }
 
 ProductCtrl.prototype.cancel = function() {

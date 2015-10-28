@@ -26,13 +26,13 @@
 <div class=" shop-products container text-center">
   <div class="row">
 
-    <div ng-repeat="product in Ctrl.products | filter: { status: 'active' }:true" class="col-sm-3 col-md-3 narrow-gutter">
+    <div ng-repeat="product in Ctrl.products | filter: { status: 'active' }:true" ng-click="Ctrl.gotoProduct(product.productId)" class="col-sm-3 col-md-3 narrow-gutter">
       <div class="tile" ng-mouseenter="hovering=true" ng-mouseleave="hovering=false" ng-class="{'hovered':hovering}">
         <img src="img/donriver.jpg" class="img-responsive" alt="placeholder">
         <div class="overlay">
-          <p>Click to View Details</p>
           <p ng-bind="product.name"></p>
-          <p ng-bind="product.price">Price</p>
+          <p ng-bind="product.price | currency">Price</p>
+          <p>Click to View Details</p>
         </div>
       </div>
     </div>
