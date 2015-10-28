@@ -6,8 +6,11 @@
 
   <div class="modal-body">
     
-    <div ng-repeat="item in Ctrl.cartService.cart">
-    	<p>an item</p>
+    <div ng-show="Ctrl.cartService.cart.length > 0">
+    	<div class="row" ng-repeat="item in Ctrl.cartService.cart">
+        <div class="col-xs-6"><p>{{item.product.name}}</p></div>
+        <div class="col-xs-6 text-right"><p>{{item.quantity}} x {{item.product.price | currency}} = <strong>{{(item.quantity * item.product.price) | currency}}</strong> </p></div>
+      </div>
     </div>
 
     <div ng-hide="Ctrl.cartService.cart.length > 0">

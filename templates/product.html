@@ -18,7 +18,7 @@
                 <input type="number" class="form-control" ng-model="Ctrl.quantity">
             </div>
             <div>
-                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn" ng-click="Ctrl.cartService.addtoCart(Ctrl.product, Ctrl.quantity)">Add to Cart</button>
             </div>
         </div>
         <!-- end col -->
