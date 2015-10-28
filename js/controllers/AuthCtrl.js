@@ -1,7 +1,6 @@
 app.controller('AuthCtrl',AuthCtrl);
 
 function AuthCtrl(api, $location){
-	
 	// inject API service and the Angular $location service into this controller
 	this.api = api;
 	this.$location = $location;

@@ -17,6 +17,8 @@
 		<script type="text/javascript" src="app.js"></script>
 		
 		<!-- Sub app controllers -->
+		<script type="text/javascript" src="js/controllers/CartCtrl.js"></script>
+		<script type="text/javascript" src="js/controllers/CheckoutCtrl.js"></script>
 		<script type="text/javascript" src="js/controllers/MainCtrl.js"></script>
 		<script type="text/javascript" src="js/controllers/AdminCtrl.js"></script>
 		<script type="text/javascript" src="js/controllers/AuthCtrl.js"></script>
@@ -24,10 +26,11 @@
 		<script type="text/javascript" src="js/controllers/EditProductCtrl.js"></script>
 		
 		<!-- Services -->
+		<script type="text/javascript" src="js/services/CartService.js"></script>
 		<script type="text/javascript" src="js/services/ApiService.js"></script>
 		<script type="text/javascript" src="js/services/ProductService.js"></script>
+		<script type="text/javascript" src="js/services/OrderService.js"></script>
 		
-		<!-- Filters -->
 
 		<!-- Third-party scripts -->
 		<script type="text/javascript" src="js/vendor/ui-bootstrap-0.14.3.min.js"></script>
@@ -36,9 +39,16 @@
 
 	<body ng-app="ShopApp">
 	
-		<!-- navigation -->
+		<!-- cart / navigation -->
+		<div class="container">
+			<div class="row form-group">
+				<div class="col-xs-12 col-sm-offset-8 col-sm-4" ng-controller="MainCtrl as Ctrl">
+					<button class="form-control" ng-click="Ctrl.viewCart()"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> View Cart ({{Ctrl.cartService.cart.length}})</button>
+				</div>
+			</div>
+		</div>
 		
-		<ng-view></ng-view>
+		<ng-view class="{{Ctrl.pageClass}}"></ng-view>
 	
 	</body>
 

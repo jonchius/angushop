@@ -33,29 +33,26 @@ ProductService.prototype.getProducts = function(){
 	// store them in localStorage and pass back the products as a promise
 	if (this.products == null) {
 		return this.retrieveProducts().then(function(response){
-			console.log(response);
 			self.setProducts(response.data.products);
 			return response.data.products;
 		});
 	} else {
 		if (typeof self.products === 'object') {
-			console.log(typeof self.products);
 			return self.products;
 		} else if (typeof self.products === 'string') {
-			console.log(typeof self.products);
 			return JSON.parse(self.products);
 		}
 	}
 
 }
 
-// ProductService.prototype.getProduct = function(id) {
+ProductService.prototype.getProduct = function(id) {
 
-// 	// get single product in the form of a JSON object
-// 	var products = JSON.parse(this.products);
-// 	return products.filter(function(product) {return product.productId === id})[0];
+	// get single product in the form of a JSON object
+	var products = JSON.parse(this.products);
+	return products.filter(function(product) {return product.productId === id})[0];
 
-// };
+};
 
 ProductService.prototype.addProduct = function(product) {
 

@@ -1,13 +1,19 @@
 app.controller('ProductCtrl',ProductCtrl);
 
-function ProductCtrl(productService, $routeParams, $location) {
+function ProductCtrl(productService, cartService, $routeParams, $location) {
 
 	this.productService = productService;
 	this.$location = $location;
 	this.productService = productService;
-	// this.product = this.productService.getProduct($routeParams.productId);
+	this.cartService = cartService;
+	this.product = this.productService.getProduct($routeParams.productId);
 	this.products = this.productService.getProducts();
 	
+}
+
+ProductCtrl.prototype.addtoCart = function(product) {
+	console.log("working");
+	this.cartService.addtoCart(product);
 }
 
 ProductCtrl.prototype.cancel = function() {

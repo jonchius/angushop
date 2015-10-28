@@ -8,10 +8,14 @@
           <h3 ng-bind="product.name" class="text-left"></h3>
           <p ng-bind="product.price | currency" class="text-left"></p>
 
-          <button type="button" class="btn btn-default btn-md cart-btn">
-            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-            Add to Cart
-          </button>
+          
+          
+            <button type="button" class="btn btn-default btn-md cart-btn" ng-click="Ctrl.addtoCart(product)">
+              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+              Add to Cart
+            </button>
+          </div>
+
         </div>
       </div>
     </div>
