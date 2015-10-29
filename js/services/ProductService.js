@@ -32,7 +32,8 @@ ProductService.prototype.getProducts = function(){
 	// if there are no products stored in localStorage, grab them from the API
 	// store them in localStorage and pass back the products as a promise
 	if (this.products == null) {
-		return this.retrieveProducts().then(function(response){
+		return this.retrieveProducts()
+		.then(function(response){
 			self.setProducts(response.data.products);
 			return response.data.products;
 		});
@@ -49,8 +50,11 @@ ProductService.prototype.getProducts = function(){
 ProductService.prototype.getProduct = function(id) {
 
 	// get single product in the form of a JSON object
-	var products = JSON.parse(this.products);
-	return products.filter(function(product) {return product.productId === id})[0];
+	if (this.products == null) {
+		this.getProducts();
+	}
+
+	return JSON.parse(this.products).filter( function(product) {return product.productId === id })[0];
 
 };
 

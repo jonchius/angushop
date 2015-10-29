@@ -9,26 +9,26 @@ function CheckoutCtrl($uibModalInstance, order, orderService, cartService) {
 
 }
 
-CheckoutCtrl.prototype.close = function() {
+CheckoutCtrl.prototype.confirm = function() {
 
-	var self = this;
+	this.customer = { 
+		name: this.customerName,
+		address: this.customerAddress
+	}
 
-	var request_body = {
+	this.order.cart = { products: this.cartService.cart.products, customer: this.customer };
+
+	this.request_body = {
 		cart: this.order.cart,
 		total: this.order.total,
 		tax: this.order.tax,
 		final_total: this.order.final_total
 	}
 
-	this.orderService.recordOrder(request_body);
+	this.orderService.recordOrder(this.request_body);
 
-	this.cartService.cart = [];
-	this.cartService.final_total = 0;
-	this.cartService.tax = 0;
-	this.cartService.total = 0;
-
+	this.cartService.clearCart();	
 	this.$uibModalInstance.close();
-
 
 }
 

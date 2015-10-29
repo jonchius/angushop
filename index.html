@@ -26,6 +26,7 @@
 		<script type="text/javascript" src="js/controllers/AuthCtrl.js"></script>
 		<script type="text/javascript" src="js/controllers/ProductCtrl.js"></script>
 		<script type="text/javascript" src="js/controllers/EditProductCtrl.js"></script>
+		<script type="text/javascript" src="js/controllers/OrderCtrl.js"></script>
 		
 		<!-- Services -->
 		<script type="text/javascript" src="js/services/CartService.js"></script>
@@ -44,5 +45,14 @@
 		<ng-view class="{{Ctrl.pageClass}}"></ng-view>
 	
 	</body>
+
+	<!-- fix for bootstrap nav hamburger menu dropdown -->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	<script>
+	    $(document).ready(function () {
+	        $('.dropdown-toggle').dropdown();
+	    });
+	</script>
 
 </html>

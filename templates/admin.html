@@ -121,7 +121,25 @@
 
             <uib-tab heading="View Orders">
             
+                <div class="admin-add-product row" ng-controller="OrderCtrl as Ctrl">
 
+                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+
+                        <div ng-repeat="order in Ctrl.orders">
+
+                            <h3> Order ID: <span ng-bind="order.orderId"></span></h3>
+
+                            <p> 
+
+                            <p> Total: <strong><span ng-bind="order.total | currency"></span></strong></p>
+
+                            <hr />
+
+                        </div>
+
+                    </div>
+
+                </div>
             
             </uib-tab>
 
