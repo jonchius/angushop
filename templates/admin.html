@@ -1,48 +1,55 @@
-    
-    <div class="container-fluid">
-      
-        <h1 class="heading admin-panel text-center">Admin Page</h1>
 
-        <div class="form-group text-center">
+    <div class="admin-panel container-fluid">
 
-            <button class="btn btn-success" ng-click="Ctrl.gotoShop()">Go to Shop</button>
+        <div class="row">
+            <div class="col-sm-6 col-md-8">
+                <h1 class="heading">Admin Page</h1>
+            </div>
 
+            <div class="col-sm-6 col-md-4 text-right admin-btns">
+                <button class="btn btn-default" ng-click="Ctrl.gotoShop()">Go to Shop</button>
+                <button class="btn btn-default">Log Out</button>
+            </div>
         </div>
-
+        <!-- end row -->
+      
         <uib-tabset justified="true">
 
             <uib-tab heading="View Products">
            
-                <div class="row product-list media" ng-repeat="product in Ctrl.products track by product.productId">
+                <div class="admin-view-products row" ng-repeat="product in Ctrl.products track by product.productId">
     	            
-                    <div class="media-left media-middle">
+                    <div class="col-sm-4 col-md-3">
                     
                         <!-- change this to actual image later -->
                         <img style="max-width: 200px;" src="img/donriver.jpg" alt="placeholder">
     	            
                     </div>
     	        
-    	            <div class="media-body">
+    	            <div class="col-sm-8 col-md-9">
 
-                        <h4 ng-bind="product.name" class="media-heading"></h4>
-                        <p ng-bind="product.description"></p>
+                        <h2 ng-bind="product.name" class="product-heading"></h2>
+                        <p>Product ID: <span ng-bind="product.productId"></span></p>
+                        <p>Description: <span ng-bind="product.description"></span></p>
                         <p>Price: <span ng-bind="product.price | currency"></span></p>
                         <p>Category: <span ng-bind="product.category"></span></p>
                         <p>Quantity: <span ng-bind="product.quantity"></span></p>
                         <p>Status: <span ng-bind="product.status"></span></p>
-                        <button ng-click="Ctrl.gotoEditProduct(product)">Edit</button>
+                        <button class="btn btn-default" ng-click="Ctrl.gotoEditProduct(product)">Edit</button>
 
     	            </div>
     				
                 </div>
+                <!-- end row -->
     				
             </uib-tab>
+            <!-- end View Products -->
 
             <uib-tab heading="Add Product">
                 
-                <div class="row" ng-controller="ProductCtrl as Ctrl">
+                <div class="admin-add-product row" ng-controller="ProductCtrl as Ctrl">
               
-                    <div class="col-sm-6 col-sm-offset-3">
+                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                         
                         <form ng-submit="Ctrl.addProduct(Ctrl.name, Ctrl.description, Ctrl.price, Ctrl.category, Ctrl.quantity, Ctrl.status)">
 
@@ -97,9 +104,9 @@
                             
                             </div>
 
-                            <div class="form-group col-xs-12 text-center">
+                            <div class="col-xs-12 no-left-padding">
                             	
-                                <button class="btn btn-success">Add Product</button>
+                                <button class="btn btn-default">Add Product</button>
                             
                             </div>
                         
@@ -110,6 +117,7 @@
                 </div>
             
             </uib-tab>
+            <!-- end Add Product -->
 
             <uib-tab heading="View Orders">
             
