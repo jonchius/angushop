@@ -28,6 +28,6 @@ AdminCtrl.prototype.gotoEditProduct = function(selectedProduct) {
 
 AdminCtrl.prototype.gotoShop = function() {
 
-	this.$location.path('/');
+	this.$location.path('/products');
 	
 }

@@ -30,7 +30,12 @@ app.config(function($routeProvider,$httpProvider){
 	})
 	.when('/products/:productId', {
 		templateUrl:'templates/product.html',
-		controller: 'ProductCtrl as Ctrl'
+		controller: 'ProductCtrl as Ctrl',
+		resolve:{
+			product: function(productService) {
+				return productService.getProduct(103);
+			}
+		}
 	})
 	.otherwise({
 		redirectTo:'/'

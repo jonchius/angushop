@@ -327,12 +327,12 @@ label {
 
 .overlay {
 	position: absolute;
-	top: 100%;
-	left: 2px;
+	top: 0%;
+	left: 100%;
 	width: 99%;
 	width: calc(100% - 4px);
 	height: 99%;
-	height: calc(100% - 4px);
+	height: calc(100% - 72px);
 	background-color: rgba(255, 255, 255, 0.75);
 	text-align: left;
 	padding-top: 20px;
@@ -350,7 +350,11 @@ label {
 }
 
 .hovered .overlay {
-	top: 40%;
+	left: 10%;
+}
+
+.shop-products-info {
+	margin-bottom: 40px;
 }
 
 
