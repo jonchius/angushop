@@ -1,6 +1,6 @@
 app.controller('AdminCtrl',AdminCtrl);
 
-function AdminCtrl(productService, $location, products, $uibModal){
+function AdminCtrl(productService, orderService, $location, products, $uibModal){
 
 	this.productService = productService;
 	this.$location = $location;

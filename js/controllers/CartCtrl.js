@@ -1,7 +1,5 @@
 app.controller('CartCtrl',CartCtrl);
 
-var TAX_RATE = 0.13; 
-
 function CartCtrl($uibModal, $uibModalInstance, cartService, cart){
 
 	this.$uibModal = $uibModal;
@@ -45,7 +43,6 @@ CartCtrl.prototype.checkout = function() {
   	this.$uibModalInstance.close();
   	this.$uibModalInstance = this.$uibModal.open(this.modalProperties);
 
-  	this.cart = [];
 
 }
 

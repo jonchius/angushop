@@ -5,12 +5,15 @@
   </div>
 
   <div class="modal-body">
+
+  	<p><label for="customername">Name: <input name="customername" type="text" ng-model="Ctrl.customerName"></p>
+  	<p><label for="customeraddress">Address: <input name="customeraddress" type="text" ng-model="Ctrl.customerAddress"></p>
     
   </div>
 
   <div class="modal-footer">
     <button class="btn btn-danger" ng-click="Ctrl.cancel()">Cancel</button>
-  	<button class="btn btn-success" ng-click="Ctrl.close()">Confirm?</button>
+  	<button class="btn btn-success" ng-click="Ctrl.confirm()">Confirm?</button>
   </div>
 
 </form>

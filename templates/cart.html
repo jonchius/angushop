@@ -1,4 +1,4 @@
-<form name="cart" ng-submit="Ctrl.recordOrder(Ctrl.cart)">
+<form name="cart">
 
   <div class="modal-header">
     <h3 class="modal-title">Cart</h3>
@@ -6,14 +6,14 @@
 
   <div class="modal-body">
     
-    <div ng-show="Ctrl.cartService.cart.length > 0">
-    	<div class="row" ng-repeat="item in Ctrl.cartService.cart">
+    <div class="well" ng-show="Ctrl.cartService.cart.products.length > 0">
+    	<div class="row" ng-repeat="item in Ctrl.cartService.cart.products">
         <div class="col-xs-6"><p>{{item.product.name}}</p></div>
         <div class="col-xs-6 text-right"><p>{{item.quantity}} x {{item.product.price | currency}} = <strong>{{(item.quantity * item.product.price) | currency}}</strong> </p></div>
       </div>
     </div>
 
-    <div ng-hide="Ctrl.cartService.cart.length > 0">
+    <div class="well" ng-hide="Ctrl.cartService.cart.products.length > 0">
     	<p>Your cart has no items</p>
     </div>
 
@@ -22,16 +22,16 @@
     	<p><small><strong>Subtotal</strong>: <span ng-bind="Ctrl.cartService.total | currency"></span></small></p>
     	<p><small><strong>Tax</strong>: <span ng-bind="Ctrl.cartService.tax | currency"></span></small></p>
     	<hr />
-		<p><strong>Total</strong>: <span ng-bind="Ctrl.cartService.findTotal() | currency"></span></p>
+		  <p><strong>Total</strong>: <span ng-bind="Ctrl.cartService.findTotal() | currency"></span></p>
 
-	</div>
+	  </div>
 
   </div>
 
   <div class="modal-footer">
   	<button class="btn btn-primary" ng-click="Ctrl.close()">Close Cart</button>
-  	<button class="btn btn-danger" ng-click="Ctrl.clear()" ng-show="Ctrl.cartService.cart.length > 0">Clear Cart</button>
-    <button class="btn btn-success" ng-show="Ctrl.cartService.cart.length > 0" ng-click="Ctrl.checkout()">Checkout</button>
+  	<button class="btn btn-danger" ng-click="Ctrl.clear()" ng-show="Ctrl.cartService.cart.products.length > 0">Clear Cart</button>
+    <button class="btn btn-success" ng-show="Ctrl.cartService.cart.products.length > 0" ng-click="Ctrl.checkout()">Checkout</button>
   </div>
 
 </form>

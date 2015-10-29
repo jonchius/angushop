@@ -21,16 +21,27 @@ app.config(function($routeProvider,$httpProvider){
 			},
 			products:function(productService){
 				return productService.getProducts();
+			},
+			order:function(orderService) {
+				return orderService.getOrders();
 			}
 		}
 	})
 	.when('/products', {
 		templateUrl:'templates/products.html',
-		controller: 'ProductCtrl as Ctrl'
+		controller: 'ProductCtrl as Ctrl',
+		resolve: {
+			products:function(productService) {
+				return productService.getProducts();
+			}
+		}
 	})
 	.when('/products/:productId', {
 		templateUrl:'templates/product.html',
-		controller: 'ProductCtrl as Ctrl'
+		controller: 'ProductCtrl as Ctrl',
+		// resolve: {
+		// 	return productService.getProduct();
+		// }
 	})
 	.otherwise({
 		redirectTo:'/'
