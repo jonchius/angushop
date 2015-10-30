@@ -38,7 +38,7 @@
             </div>
             <div class="form-group">
                 <label for="quantity">Quantity</label>
-                <input type="number" min="0" max="Ctrl.product.quantity" class="form-control" ng-model="Ctrl.quantity">
+                <input type="number" min="0" max="{{Ctrl.product.quantity}}" class="form-control" ng-model="Ctrl.quantity">
             </div>
             <div>
                 <button class="btn btn-default cart-btn" ng-click="Ctrl.cartService.addtoCart(Ctrl.product, Ctrl.quantity)">Add to Cart</button>
