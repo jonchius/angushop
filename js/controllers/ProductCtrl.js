@@ -15,6 +15,14 @@ ProductCtrl.prototype.addtoCart = function(product, quantity) {
 	this.cartService.addtoCart(product, quantity);
 }
 
+ProductCtrl.prototype.checkQuantity = function(inStock, orderQuantity) {
+	return parseInt(orderQuantity) > parseInt(inStock);
+}
+
+ProductCtrl.prototype.fixQuantity = function(quantity) {
+	return parseInt(Math.floor(quantity));
+}
+
 ProductCtrl.prototype.cancel = function() {
 
 	this.$location.path('/admin');

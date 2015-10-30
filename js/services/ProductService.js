@@ -70,7 +70,7 @@ ProductService.prototype.addProduct = function(product) {
 
 ProductService.prototype.editProduct = function(productId, product) {
 	
-
+	var self = this;
 	return this.api.request('/editproduct/'+productId, product, 'POST');
 	
 }
