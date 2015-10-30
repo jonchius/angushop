@@ -33,6 +33,7 @@ ProductCtrl.prototype.addProduct = function(name,description,price,category,quan
 	var request_body = {
 		name: name,
 		description: description,
+		image: image, 
 		price: price,
 		category: category,
 		quantity: quantity,
@@ -43,6 +44,7 @@ ProductCtrl.prototype.addProduct = function(name,description,price,category,quan
 
   	// Reset fields after form submission
 	this.name = '';
+	this.image = '';
 	this.description = '';
 	this.price = '';
 	this.category = '';
