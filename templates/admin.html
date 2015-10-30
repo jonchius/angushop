@@ -135,7 +135,11 @@
 
                             <h3> Order ID: <span ng-bind="order.orderId"></span></h3>
 
-                            <p> 
+                            <div ng-repeat="item in order.cart.products"> 
+
+                                <p ng-bind="item.name"></p>
+
+                            </div>
 
                             <p> Total: <strong><span ng-bind="order.final_total | currency"></span></strong></p>
 

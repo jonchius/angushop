@@ -35,14 +35,16 @@
                 <p><span ng-bind="Ctrl.product.description"></span></p>
                 <p><span ng-bind="Ctrl.product.price | currency"></span></p>
                 <p>Category: <span ng-bind="Ctrl.product.category"></span></p>
+                <p>Quantity in Stock: <span ng-bind="Ctrl.product.quantity"></span></p>
             </div>
             <div class="form-group">
                 <label for="quantity">Quantity</label>
-                <input type="number" min="1" max="{{Ctrl.product.quantity}}" class="form-control" ng-model="Ctrl.quantity">
+                <input type="number" min="1" max="{{ctrl.product.quantity}}" class="form-control" ng-model="Ctrl.quantity">
             </div>
-            <div>
+            <div class="form-group" ng-hide="Ctrl.checkQuantity(Ctrl.product.quantity, Ctrl.quantity)" ng-if="Ctrl.quantity > 0">
                 <button class="btn btn-default cart-btn" ng-click="Ctrl.cartService.addtoCart(Ctrl.product, Ctrl.quantity)">Add to Cart</button>
             </div>
+
             <div class="continue-shopping-cta">
                 <a href="/#/products">Continue Shopping &rarr;</a>
             </div>
