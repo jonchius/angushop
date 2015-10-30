@@ -2,8 +2,12 @@
   <h1>Add Product</h1>
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <form ng-submit="Ctrl.addProduct(name,description,price,category,quantity,status)">
-        <input type="text" ng-model="name" placeholder="name">
+      <form name="addProduct" ng-submit="Ctrl.addProduct(name,description,price,category,quantity,status)">
+        <input type="text" name="name" ng-model="name" placeholder="name" minlength="2" required>
+        <div ng-messages="addProduct.name.$error">
+          <div ng-message="minlength">Product name must be at least 2 characters</div>
+          <div ng-message="required">Product name required</div>
+        </div>
         <textarea ng-model="description" placeholder="description"></textarea>
         <input type="text" ng-model="price" placeholder="price">
         <select ng-model="category">
