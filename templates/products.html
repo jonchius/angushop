@@ -27,7 +27,7 @@
 
     <div ng-repeat="product in Ctrl.products | filter: {name: search} | filter: {status:'active'}:true" ng-click="Ctrl.gotoProduct(product.productId)" class="col-sm-3 col-md-3 narrow-gutter">
       <div class="tile" ng-mouseenter="hovering=true" ng-mouseleave="hovering=false" ng-class="{'hovered':hovering}">
-        <img src="img/donriver.jpg" class="img-responsive" alt="placeholder">
+        <img ng-src="{{product.image}}" class="img-responsive" alt="{{product.name}}">
         <div class="overlay">
           <p ng-bind="product.name"></p>
           <p ng-bind="product.price | currency">Price</p>

@@ -20,6 +20,7 @@ EditProductModalCtrl.prototype.saveEdits = function(editedProduct) {
 
 	var request_body = {
 		name: editedProduct.name,
+		image: editedProduct.image, 
 		description: editedProduct.description,
 		price: editedProduct.price,
 		category: editedProduct.category,
@@ -27,13 +28,12 @@ EditProductModalCtrl.prototype.saveEdits = function(editedProduct) {
 		status: editedProduct.status
 	}
 
-	//console.log(editedProduct.productId);
-	//console.log(editedProduct);
-
 	this.productService.editProduct(editedProduct.productId, request_body)
 		.then(function(response) {
 			console.log("Success: product edited");
 			self.$uibModalInstance.close();
+			console.log(response);
+			// self.productService.setProducts(self.productService.products);
 		})
 		.catch(function(response) {
 			console.log("Error: product not edited");

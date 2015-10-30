@@ -20,9 +20,8 @@
                 <div class="admin-view-products row" ng-repeat="product in Ctrl.products track by product.productId">
     	            
                     <div class="col-sm-4 col-md-3">
-                    
-                        <!-- change this to actual image later -->
-                        <img style="max-width: 200px;" src="img/donriver.jpg" alt="placeholder">
+
+                        <img style="max-width: 200px;" ng-src="{{product.image}}" alt="{{product.name}}">
     	            
                     </div>
     	        
@@ -57,6 +56,13 @@
                                 
                                 <label for="name">Product Name</label>
                                 <input type="text" class="form-control" ng-model="Ctrl.name" placeholder="Product Name">
+                            
+                            </div>
+
+                            <div class="form-group">
+                                
+                                <label for="image">Product Image (enter URL)</label>
+                                <input type="text" class="form-control" ng-model="Ctrl.image" placeholder="Product Image"></textarea>
                             
                             </div>
 
@@ -131,7 +137,7 @@
 
                             <p> 
 
-                            <p> Total: <strong><span ng-bind="order.total | currency"></span></strong></p>
+                            <p> Total: <strong><span ng-bind="order.final_total | currency"></span></strong></p>
 
                             <hr />
 

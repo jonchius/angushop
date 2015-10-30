@@ -11,6 +11,11 @@
     </div>
 
     <div class="form-group">
+      <label for="name">Product Image (enter URL)</label>
+      <input type="text" class="form-control" ng-model="Ctrl.productToEdit.image" ng-model-options="{updateOn: 'submit'}">
+    </div>
+
+    <div class="form-group">
       <label for="description">Description</label>
       <textarea class="form-control" ng-model="Ctrl.productToEdit.description" ng-model-options="{updateOn: 'submit'}"></textarea>
     </div>
