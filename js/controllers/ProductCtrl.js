@@ -7,6 +7,7 @@ function ProductCtrl(productService, cartService, $routeParams, $location) {
 	this.cartService = cartService;
 	this.product = this.productService.getProduct($routeParams.productId);
 	this.products = this.productService.getProducts();
+	this.quantity = 1;
 	
 }
 

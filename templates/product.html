@@ -11,10 +11,10 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <form class="navbar-form navbar-right">
-        <div class="form-group">
+        <!-- <div class="form-group">
           <input type="text" placeholder="Search" class="form-control">
           <button type="submit" class="btn search-btn">Go</button>
-        </div>
+        </div> -->
 
         <button class="btn btn-default cart-btn" ng-click="Ctrl.viewCart()"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> View Cart ({{Ctrl.cartService.findTotal() | currency}})</button>
       </form>
@@ -26,10 +26,10 @@
 
    	<div class="row text-left">
         <div class="col-sm-4 col-sm-offset-1">
-            <img src="img/donriver.jpg" class="img-responsive" alt="placeholder">
+            <img src="img/donriver.jpg" class="img-responsive center-block" alt="placeholder">
         </div>
 
-        <div class="col-sm-7">
+        <div class="col-sm-7 product-details-info">
             <div>
                 <h2 ng-bind="Ctrl.product.name" class="heading"></h2>
                 <p><span ng-bind="Ctrl.product.description"></span></p>
@@ -42,6 +42,9 @@
             </div>
             <div>
                 <button class="btn btn-default cart-btn" ng-click="Ctrl.cartService.addtoCart(Ctrl.product, Ctrl.quantity)">Add to Cart</button>
+            </div>
+            <div class="continue-shopping-cta">
+                <a href="/products">Continue Shopping &rarr;</a>
             </div>
         </div>
         <!-- end col -->

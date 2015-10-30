@@ -332,7 +332,7 @@ label {
 	width: 99%;
 	width: calc(100% - 4px);
 	height: 99%;
-	height: calc(100% - 72px);
+	height: calc(100% - 67px);
 	background-color: rgba(255, 255, 255, 0.75);
 	text-align: left;
 	padding-top: 20px;
@@ -369,6 +369,28 @@ label {
 
 .product-details .form-control {
 	max-width: 200px;
+}
+
+.continue-shopping-cta {
+	margin-top: 120px;
+}
+
+@media (max-width: 1199px) {
+
+	.continue-shopping-cta {
+		margin-top: 40px;
+	}
+
+}
+
+@media (min-width: 633px) and (max-width: 767px) {
+
+	.product-details-info {
+		width: 82%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
 }
 
 
