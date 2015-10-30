@@ -1,10 +1,11 @@
 app.controller('CheckoutCtrl',CheckoutCtrl);
 
-function CheckoutCtrl($uibModalInstance, order, orderService, cartService) {
+function CheckoutCtrl($uibModalInstance, order, orderService, productService, cartService) {
 
 	this.$uibModalInstance = $uibModalInstance;
 	this.order = order;
 	this.orderService = orderService;
+	this.productService = productService;
 	this.cartService = cartService;
 
 }
@@ -26,6 +27,13 @@ CheckoutCtrl.prototype.confirm = function() {
 	}
 
 	this.orderService.recordOrder(this.request_body);
+
+	for (var i=0; i<this.order.cart.products.length; i++) {
+		var productInStock = this.productService.getProduct(this.order.cart.products[i].product.productId);
+		productInStock.quantity = parseInt(productInStock.quantity) - parseInt(this.order.cart.products[i].quantity);
+		var newProduct = this.productService.editProduct(productInStock.productId, productInStock);
+		console.log(newProduct);
+	}
 
 	this.cartService.clearCart();	
 	this.$uibModalInstance.close();
