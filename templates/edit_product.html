@@ -6,12 +6,16 @@
 
   <div class="modal-body">
     <div class="form-group">
-      <label for="name">Product Name</label>
-      <input type="text" class="form-control" ng-model="Ctrl.productToEdit.name" ng-model-options="{updateOn: 'submit'}">
+      <label for="productname">Product Name</label>
+      <input type="text" class="form-control" ng-model="Ctrl.productToEdit.name" name="name" ng-model-options="{updateOn: 'submit'}" minlength="2" required>
+      <div ng-messages="editProduct.name.$error">
+        <div ng-message="required" class="alert alert-danger">Product Name cannot be blank</div>
+        <div ng-message="minlength" class="alert alert-danger">Product Name must be at least 2 characters</div>
+      </div>
     </div>
 
     <div class="form-group">
-      <label for="name">Product Image (enter URL)</label>
+      <label for="image">Product Image (enter URL)</label>
       <input type="text" class="form-control" ng-model="Ctrl.productToEdit.image" ng-model-options="{updateOn: 'submit'}">
     </div>
 

@@ -31,9 +31,17 @@ EditProductModalCtrl.prototype.saveEdits = function(editedProduct) {
 	this.productService.editProduct(editedProduct.productId, request_body)
 		.then(function(response) {
 			console.log("Success: product edited");
+			
+			var temp = localStorage.getItem('products');
+					temp = JSON.parse(temp);
+
+			for (var i=0; i<temp.length; i++) {
+				if(response.data.productId == temp[i].productId) {
+					temp.splice(i,1,response.data);
+				}
+			}
+			localStorage.setItem('products', JSON.stringify(temp));
 			self.$uibModalInstance.close();
-			console.log(response);
-			// self.productService.setProducts(self.productService.products);
 		})
 		.catch(function(response) {
 			console.log("Error: product not edited");

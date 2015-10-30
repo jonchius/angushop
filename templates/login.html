@@ -7,11 +7,15 @@
     
             <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
                 
-                <form ng-submit="Ctrl.authenticate(user,password)">
+                <form novalidate name="loginForm" ng-submit="Ctrl.authenticate(user,password)">
                   
                     <div class="form-group">
                         <label for="username">Email</label>
-                        <input type="text" class="form-control" placeholder="Email" ng-model="user">
+                        <input required type="email" class="form-control" name="user" placeholder="Email" ng-model="user">
+                        <div ng-messages="loginForm.user.$error" ng-if="loginForm.$submitted || loginForm.user.$touched">
+                            <div ng-message="email" class="alert alert-danger">Invalid email</div>
+                            <div ng-message="required" class="alert alert-danger">Please enter your email to login</div>
+                        </div>
                     </div>
 
                     <div class="form-group">
